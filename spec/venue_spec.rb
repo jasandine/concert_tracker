@@ -8,4 +8,8 @@ describe(Venue) do
     expect(venue.name).to(eq("Gravel pit"))
   end
 
+  it("validates the presence of a venue name") do 
+    venue = Venue.new({:name => ""})
+    expect(venue.save).to(eq(false))
+  end
 end
